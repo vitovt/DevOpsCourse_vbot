@@ -20,15 +20,12 @@ var (
 
 // vbotCmd represents the kbot command
 var vbotCmd = &cobra.Command{
-	Use:     "vbot",
-	Aliases: []string{"start"},
-	Short:   "A brief description of your command",
-	Long: `A longer description that spans multiple lines and likely contains examples
-and usage of using your command. For example:
-
-Cobra is a CLI library for Go that empowers applications.
-This application is a tool to generate the needed files
-to quickly create a Cobra application.`,
+	Use:     "start",
+	Aliases: []string{"enable"},
+	Short:   "Start vbot daemon",
+	Long: `Use vbot start to run process in background
+mode. Application doesn't need open ports. It use telegram API
+to listen incomming commands and reply to it.`,
 	Run: func(cmd *cobra.Command, args []string) {
 
 		fmt.Printf("vbot %s started", appVersion)
