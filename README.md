@@ -16,6 +16,23 @@ go build -o vbot
 Or you can run pre-defined rules using **gnu make**:
 `make build`
 
+### Build Architectures and Platforms
+
+You can build for any GO supported arch and platform.
+Examples:
+
+```sh
+make build TARGETOS=linux TARGETARCH=amd64
+make build TARGETOS=linux TARGETARCH=arm64
+make build TARGETOS=windows TARGETARCH=amd64
+make build TARGETOS=darwin TARGETARCH=amd64
+make build TARGETOS=darwin TARGETARCH=arm64
+make build TARGETOS=linux TARGETARCH=mips64
+```
+
+Read more about supported GOOS/GOARCH pairs here: [[https://gist.github.com/asukakenji/f15ba7e588ac42795f421b48b8aede63#file-0-go-os-arch-md]]
+
+
 ## Usage
 
 `./vbot help` - see help message
@@ -38,6 +55,7 @@ Use one of the pre-defined color: _red_, _amber_, _green_
 You can **test it here:** https://t.me/prometheus_course_bot
 
 ## Docker image
+
 You can build Docker image using `make image'
 
 After build you can run app in docker:
