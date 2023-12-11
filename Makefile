@@ -11,6 +11,30 @@ ifndef TARGETARCH
   TARGETARCH := $(if $(filter unknown,$(TARGETARCH)),arm64,$(TARGETARCH)) #default
 endif
 
+help:
+	@echo "Makes vbot - teleGO based telegram bot"
+	@echo "Usage: make [target]"
+	@echo "Targets:"
+	@echo "Main targets:"
+	@echo "  build       : Build the application"
+	@echo "  image       : Build Docker image"
+	@echo "  push        : Push Docker image to registry"
+	@echo "  clean       : Remove build artifacts"
+	@echo ""
+	@echo "Helpers:"
+	@echo "  format      : Format the source code"
+	@echo "  lint        : Lint the source code"
+	@echo "  test        : Run tests"
+	@echo "  get         : Download and install packages"
+	@echo ""
+	@echo "Environment Variables:"
+	@echo "  TARGETOS    : Target operating system (default: linux, options: linux darwin windows openbsd solarisi)"
+	@echo "  TARGETARCH  : Target architecture (default: [try autodetect], options: amd64 arm arm64 mips mips64)"
+	@echo ""
+	@echo "Hint: You can set the TARGETOS and TARGETARCH variables when running make, e.g.,"
+	@echo "      make build TARGETOS=linux TARGETARCH=amd64"
+	@echo "list of supported GOOS/GOARCH pair see here: https://gist.github.com/asukakenji/f15ba7e588ac42795f421b48b8aede63#file-0-go-os-arch-md"
+
 format:
 	gofmt -s -w ./
 
