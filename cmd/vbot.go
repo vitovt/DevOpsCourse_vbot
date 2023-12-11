@@ -37,7 +37,7 @@ to listen incomming commands and reply to it.`,
 		})
 
 		if err != nil {
-			log.Fatalf("Please check TELE_TOKEN env variable. %s", err)
+			log.Fatalf("Please check TELE_TOKEN env variable. [%s]", err)
 			return
 		}
 
