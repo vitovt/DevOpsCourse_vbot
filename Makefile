@@ -1,5 +1,5 @@
 VERSION=$(shell git describe --tags --abbrev=0)-$(shell git rev-parse --short HEAD)
-REGISTRY=vvitovt
+REGISTRY=eu.gcr.io/devopscourse-407819
 APP=vbot
 ifndef TARGETOS
   TARGETOS=linux#linux darwin windows
