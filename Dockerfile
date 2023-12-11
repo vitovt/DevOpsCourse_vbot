@@ -1,7 +1,13 @@
 FROM quay.io/projectquay/golang:1.20 as builder
 WORKDIR /go/src/app
 copy . .
-RUN make build
+ARG TARGETARCH
+ARG TARGETOS
+RUN if [ -n "$TARGETOS" ] || [ -n "$TARGETARCH" ]; then \
+        make build TARGETOS=$TARGETOS TARGETARCH=$TARGETARCH; \
+    else \
+        make build; \
+    fi
 
 FROM scratch
 WORKDIR /
