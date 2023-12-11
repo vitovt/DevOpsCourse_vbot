@@ -16,6 +16,10 @@ var rootCmd = &cobra.Command{
 	Long: `Advacnded telegram bot with a lot of functions
 including BlacJack and companions.
 
+QUICK START: 
+        TELE_TOKEN="1234567890:AABBCC_12345678901234567890123456789012" ./vbot start
+        (after this command you can test TG bot)
+
 Don't hesitate to try all it's power!`,
 	// Uncomment the following line if your bare application
 	// has an action associated with it:
